@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador Par ou Ímpar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 100%; 
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="mainImage" src="imagem.png" alt="Imagem não carregada" onerror="logError('A imagem não foi carregada.')">
+        <input type="text" id="numberInput" placeholder="Digite um número">
+        <button onclick="checkNumber()">Verificar</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function logError(message) {
+            const data = {
+                type: "error",
+                message: message,
+                timestamp: new Date().toISOString()
+            };
+            await fetch('/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        }
+
+        async function logInfo(message) {
+            const data = {
+                type: "info",
+                message: message,
+                timestamp: new Date().toISOString()
+            };
+            await fetch('/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        }
+
+        async function checkNumber() {
+            const input = document.getElementById('numberInput').value;
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(input) || input.trim() === "") {
+                await logError('Entrada inválida. Insira apenas números.');
+                resultDiv.textContent = 'Por favor, insira um número válido!';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
+            const number = parseInt(input, 10);
+
+            if (number % 2 === 0) {
+                resultDiv.textContent = `O número ${number} é Par.`;
+                resultDiv.style.color = 'green';
+                await logInfo(`Entrada válida: ${number} é Par.`);
+            } else {
+                resultDiv.textContent = `O número ${number} é Ímpar.`;
+                resultDiv.style.color = 'green';
+                await logInfo(`Entrada válida: ${number} é Ímpar.`);
+            }
+        }
+    </script>
+</body>
+</html>

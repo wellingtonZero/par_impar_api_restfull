@@ -1,0 +1,6 @@
+[2024-12-25T17:54:14.920Z] [ERROR] A imagem não foi carregada.
+[2024-12-25T17:54:50.271Z] [ERROR] Entrada inválida. Insira apenas números.
+[2024-12-25T17:55:07.281Z] [INFO] Entrada válida: 10 é Par.
+[2024-12-25T17:55:38.702Z] [INFO] Entrada válida: 11 é Ímpar.
+[2024-12-25T19:15:00.178Z] [INFO] Entrada válida: 3 é Ímpar.
+[2024-12-25T19:15:04.466Z] [INFO] Entrada válida: 5 é Ímpar.
