@@ -9,7 +9,7 @@ O sistema é dividido em duas partes principais:</p>
 <h4>Funcionalidades Principais</h4>
 <ol>
   <li>Verificar se um número é par ou ímpar.</li>
-  <lis>Registrar logs de erros e informações em um arquivo de texto (logs.txt):</li>
+  <li>Registrar logs de erros e informações em um arquivo de texto (logs.txt):</li>
   <ul>
     <li>
       Logs de ERROS: Capturam problemas como entradas inválidas ou falhas no carregamento da imagem.
@@ -18,4 +18,11 @@ O sistema é dividido em duas partes principais:</p>
       Logs de INFO: Capturam eventos normais, como o processamento de uma entrada válida.
     </li>
   </ul>
+  <li>Capturar data e hora de cada evento ou erro para rastreabilidade.</li>
 </ol>
+<h4>Dependências do Projeto</h4>
+<ol>
+  <li>Node.js: Ambiente de execução do backend.</li>
+  <li>Express.js: Framework usado para criar o servidor e gerenciar rotas.</li>
+</ol>
+<p>instale as dependências usando: <code>npm install express</code></p>
