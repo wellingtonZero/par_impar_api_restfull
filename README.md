@@ -6,3 +6,16 @@ O sistema é dividido em duas partes principais:</p>
   <li>Frontend: Interface web responsável pela interação do usuário</li>
   <li>Backend: Servidor Node.js com Express.js que gerencia os logs e os registra em um arquivo .txt.</li>
 </ol>.
+<h4>Funcionalidades Principais</h4>
+<ol>
+  <li>Verificar se um número é par ou ímpar.</li>
+  <lis>Registrar logs de erros e informações em um arquivo de texto (logs.txt):</li>
+  <ul>
+    <li>
+      Logs de ERROS: Capturam problemas como entradas inválidas ou falhas no carregamento da imagem.
+    </li>
+    <li>
+      Logs de INFO: Capturam eventos normais, como o processamento de uma entrada válida.
+    </li>
+  </ul>
+</ol>
